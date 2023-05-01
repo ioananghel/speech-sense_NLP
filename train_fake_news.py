@@ -1,4 +1,4 @@
-# Training for facke news detection
+# Training for fake news detection
 
 import numpy
 import pandas as pd
@@ -58,7 +58,7 @@ import pickle
 with open('fake_news.pkl', 'wb') as f:
     pickle.dump(logreg, f)
 
-with open('count_vectorizer.pickle', 'wb') as f:
+with open('fake_news_count_vectorizer.pickle', 'wb') as f:
     pickle.dump(count_vectorizer, f)
 
 with open('tfidf_transformer.pickle', 'wb') as f:
