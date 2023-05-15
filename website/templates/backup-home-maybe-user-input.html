@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+{% block title %}Home{% endblock %} 
+{% block content%}
+
+  <h1 align="center">Mainstream Media Analysis</h1>
+  
+  {% for article in articles %}
+    <div class="card bg-secondary mb-3" style="max-width: 50vw;">
+      <div class="card-header">{{ article.title }}</div>
+      <div class="card-body">
+        <h4 class="card-title">Secondary card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+  {% endfor %}
+
+  <form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br />
+    <div align="center">
+      <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+  </form>
+  <ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+    <li class="list-group-item">
+      {{ note.data }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" onClick="deleteNote({{ note.id }})"></button>
+    </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

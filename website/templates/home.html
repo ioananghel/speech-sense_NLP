@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+{% block title %}Home{% endblock %} 
+{% block content%}
+
+  <h1 align="center">Mainstream Media Analysis</h1>
+  <br><br>
+  {% for article in articles %}
+    <div class="d-flex justify-content-center">
+      <div class="card bg-secondary mb-3" style="max-width: 70vw;">
+        <div class="card-header">{{article.id}}) General AI Sentiment: {{ article.sentiment }}</div>
+        <div class="card-body">
+          <h4 class="card-title">{{ article.title }}</h4>
+          <p class="card-text">{{ article.content }}</p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
