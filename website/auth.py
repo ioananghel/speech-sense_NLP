@@ -18,7 +18,11 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('views.home'))
+
+                if(user.email == "admin@cti.ro"):
+                    return redirect(url_for('views.admin'))
+                else:
+                    return redirect(url_for('views.home'))
             else:
                 flash('Incorrect password, try again.', category='error')
         else:

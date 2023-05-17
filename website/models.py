@@ -4,15 +4,6 @@ from flask_login import UserMixin
 from sqlalchemy.sql import func
 
 # database models for users and notes(in this case)
-
-class Note(db.Model):
-    # the ids are autoincremented by the db software
-    id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.String(10000))
-    # the date is auto-generated as today
-    date = db.Column(db.DateTime(timezone=True), default=func.now()) 
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id')) #lower case User because quirky
-
 # articles on google average at around 2000 words, at around 5 chars per word
 # safe to assume that the average article has around 10 000 chars
 # to be somewhat safe, for this proof of concept 10 times that should be good enough
@@ -29,4 +20,3 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(150))
     first_name = db.Column(db.String(150))
     # you can access all of the notes of a user from this notes vector
-    notes = db.relationship('Note')
