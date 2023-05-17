@@ -10,3 +10,11 @@
     align-items: flex-start;
     width: 40vw;
 }
+
+.log-form-style{
+    min-width: 40vw;
+}
+
+.log-btn-style{
+    width: 125px;
+}
