@@ -11,6 +11,13 @@
     width: 40vw;
 }
 
+.admin-ai-alignment{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 .log-form-style{
     min-width: 40vw;
 }
