@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% block title %}Home{% endblock %} 
+{% block content%}
+
+  <h1 align="center">Mainstream Media Analysis - Admin Page</h1>
+
+  <br>
+  <div class="form-group log-alignment">
+    <form method="POST" style="width: 70vw;">
+      <textarea class="form-control" name="article_title" id="article_title" rows="1"></textarea>
+      <br>
+      <textarea class="form-control" name="article_content" id="article_content" rows="3"></textarea>
+      <br/>
+      <div>
+        <button type="submit" class="btn btn-primary">Add Article</button>
+      </div>
+    </form>
+  </div>
+
+  <br><br>
+  {% for article in articles %}
+    <div class="d-flex justify-content-center">
+      <div class="card bg-secondary mb-3" style="max-width: 70vw;">
+        <div class="card-header admin-ai-alignment">
+          {{article.id}}) General AI Sentiment: {{ article.sentiment }}
+          
+          <button type="button" class="btn-close" data-bs-dismiss="alert" onClick="deleteArticle({{ article.id }})"></button>
+            
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ article.title }}</h4>
+          <p class="card-text">{{ article.content }}</p>
+        </div>
+      </div>
+    </div>
+    <br>
+  {% endfor %}
+
+{% endblock %}

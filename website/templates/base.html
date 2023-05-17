@@ -128,16 +128,16 @@
     ></script>
 
 {% block javascript %}
-    <script type="text/javascript">
-      function deleteNote(noteId) {
-  fetch("/delete-note", {
-    method: "POST",
-    body: JSON.stringify({ noteId: noteId }),
-  }).then((_res) => {
-    window.location.href = "/";
-  });
-  }
-</script>
+  <script type="text/javascript">
+    function deleteArticle(articleId) {
+      fetch("/delete-article", {
+        method: "POST",
+        body: JSON.stringify({ articleId: articleId }),
+      }).then((_res) => {
+        window.location.href = "/admin";
+      });
+    }
+  </script>
 {% endblock %}
   </body>
 
