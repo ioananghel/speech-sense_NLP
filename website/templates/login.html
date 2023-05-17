@@ -2,27 +2,36 @@
 %}
 <form method="POST">
   <h3 align="center">Login</h3>
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      name="email"
-      placeholder="Enter email"
-    />
+  
+  <br>
+  <div class="log-alignment">
+    <div class="form-group" style="min-width: 40vw">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Enter email"
+      />
+    </div>
+    
+    <br>
+    <div class="form-group" style="min-width: 40vw">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="Enter password"
+      />
+    </div>
+
+    <br>
+    <div class="btn-log-alignment">
+      <button type="submit" class="btn btn-primary" style="width: 125px">Login</button>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="password"
-      name="password"
-      placeholder="Enter password"
-    />
-  </div>
-  <br />
-  <button type="submit" class="btn btn-primary">Login</button>
 </form>
 {% endblock %}
