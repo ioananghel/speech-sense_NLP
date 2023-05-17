@@ -4,18 +4,31 @@
 
   <h1 align="center">Mainstream Media Analysis - Admin Page</h1>
 
-  <br>
+  <br><br>
   <div class="form-group log-alignment">
     <form method="POST" style="width: 70vw;">
-      <textarea class="form-control" name="article_title" id="article_title" rows="1"></textarea>
+      <label>Article Title</label>
+      <textarea 
+        class="form-control" name="article_title" id="article_title" 
+        rows="1" placeholder="Enter article title">
+      </textarea>
+      
       <br>
-      <textarea class="form-control" name="article_content" id="article_content" rows="3"></textarea>
+      <label>Article Content</label>
+      <textarea 
+        class="form-control" name="article_content" id="article_content"
+        rows="3" placeholder="Enter article content">
+      </textarea>
+
       <br/>
       <div>
         <button type="submit" class="btn btn-primary">Add Article</button>
       </div>
     </form>
   </div>
+
+  <br><hr><br>
+  <h2 align="center">Articles on the main page</h2>
 
   <br><br>
   {% for article in articles %}
