@@ -12,6 +12,7 @@ class Articles(db.Model):
     title = db.Column(db.String(1000))
     content = db.Column(db.String(10000))
     sentiment = db.Column(db.String(1000))
+    category = db.Column(db.String(1000))
 
 # one User to many Notes
 class User(db.Model, UserMixin):

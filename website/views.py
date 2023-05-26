@@ -35,6 +35,16 @@ def admin():
 @views.route('/', methods=['GET', 'POST'])
 @login_required
 def home():
+
+    # from .test import test_df
+
+    # for i in range(0, len(test_df)):
+    #     article = test_df.iloc[i]
+    #     new_article = Articles(title=article["content"], content=article["content"], sentiment=article["trust_prediction"], category=article["category_predictions"])  #providing the schema for the article 
+    #     db.session.add(new_article) #adding the article to the database 
+    #     db.session.commit()
+    #  # flash('Article added!', category='success')
+
     articles = Articles.query.all()
 
     # with this check if an user is logged in

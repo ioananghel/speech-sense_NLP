@@ -7,9 +7,9 @@
   {% for article in articles %}
     <div class="d-flex justify-content-center">
       <div class="card bg-secondary mb-3" style="max-width: 70vw;">
-        <div class="card-header">{{article.id}}) General AI Sentiment: {{ article.sentiment }}</div>
+        <div class="card-header">{{article.id}}) General AI Sentiment: {{ article.category }}</div>
         <div class="card-body">
-          <h4 class="card-title">{{ article.title }}</h4>
+          <h4 class="card-title">{{ article.title[:60] + "..." }}</h4>
           <p class="card-text">{{ article.content }}</p>
         </div>
       </div>
