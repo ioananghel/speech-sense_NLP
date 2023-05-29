@@ -24,7 +24,9 @@ def admin():
             if len(article_title) < 1:
                 flash('Title too short!', category='error') 
             else:
-                new_article = Articles(title=article_title, content=article_content, sentiment="not sure")  #providing the schema for the article 
+                from .test import predict_category
+                categ = predict_category(article_content)
+                new_article = Articles(title=article_title, content=article_content, sentiment="not sure", category = categ)  #providing the schema for the article 
                 db.session.add(new_article) #adding the article to the database 
                 db.session.commit()
                 flash('Article added!', category='success')

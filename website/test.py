@@ -58,6 +58,22 @@ print(test_df.head())
 # test_df['content'] = test_df['title'] + ' ' + test_df['text']
 test_df['content'] = test_df['Text']
 
+def predict_category(text):
+    df=pd.DataFrame(columns=[text])
+    x_test = loaded_count_vectorizer.transform(df)
+    prediction = loaded_logreg.predict(x_test)
+    
+    if prediction == 0:
+        return "business"
+    elif prediction == 1:
+        return "tech"
+    elif prediction == 2:
+        return "politics"
+    elif prediction == 3:
+        return "sport"
+    else:
+        return "entertainment"
+
 # Vectorize the text data
 x_test = loaded_count_vectorizer.transform(test_df['content'])
 
