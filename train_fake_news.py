@@ -1,5 +1,3 @@
-# Training for fake news detection
-
 import numpy
 import pandas as pd
 import nltk
@@ -11,9 +9,6 @@ dataFrame = pd.read_csv("data_sets/fake_news_train.csv")
 dataFrame.fillna('', inplace=True)
 dataFrame['label'] = dataFrame['label'].astype(int)
 
-# TO DO: tokenize text -- find how and to what parts this method should be applied.
-# word_tokenize()
-
 x_dataFrame = dataFrame['title'] + dataFrame['text']
 y_dataFrame = dataFrame['label']
 
@@ -22,7 +17,6 @@ x_dataFrame.dropna()
 # VECTORIZATION
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 count_vectorizer = CountVectorizer()
 count_vectorizer.fit_transform(x_dataFrame)
@@ -43,9 +37,6 @@ from sklearn.linear_model import LogisticRegression
 
 logreg = LogisticRegression()
 print(logreg.fit(x_train, y_train))
-Accuracy = logreg.score(x_test, y_test)
-
-print(Accuracy*100)
 
 # import tensorflow as tf
 

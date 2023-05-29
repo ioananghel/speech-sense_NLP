@@ -3,7 +3,6 @@ import pickle
 from .models import Articles
 from . import db
 
-# Load the saved model
 with open('fake_news.pkl', 'rb') as file:
     loaded_logreg = pickle.load(file)
 
